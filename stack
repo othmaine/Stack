@@ -1,0 +1,51 @@
+class Stack
+{
+    private int maxSize;
+    private long[] stack;
+    private int top;
+    
+    public Stack(int a)
+    {
+        maxSize = a;
+        top = -1;
+        stack = new long[maxSize];
+    }
+    public void push(long val)
+    {
+        stack[++top] =val;
+    }
+    public long pop()
+    {
+        return stack[top--];
+    }
+    public boolean isEmpty()
+    {
+        return (top == -1);
+    }
+    public long peek()
+    {
+        return stack[top];
+    }
+    public boolean isFul()
+    {
+        return(top == maxSize-1);
+    }
+}
+public class StackApp 
+{
+    public static void main(String[] args) 
+    {
+        Stack s = new Stack(100);
+        s.push(3);
+        s.push(5);
+        s.push(7);
+        s.push(5);
+        s.push(8);
+        
+        while(!s.isEmpty())
+        {
+            System.out.println(s.pop());
+        }
+    }
+    
+}
